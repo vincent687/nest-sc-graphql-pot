@@ -1,0 +1,38 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+input CreateHobbyInput {
+  """Example field (placeholder)"""
+  name: String!
+}
+
+"""
+A date-time string at UTC, such as 2019-12-03T09:54:33Z, compliant with the date-time format.
+"""
+scalar DateTime
+
+type Hobby {
+  id: Int!
+  name: String!
+}
+
+type Mutation {
+  createHobby(createHobbyInput: CreateHobbyInput!): Hobby!
+}
+
+type Query {
+  getHobbies: [Hobby!]!
+  hobby(id: Int!): Hobby!
+  user(id: Int!): User!
+  users: [User!]!
+}
+
+type User {
+  email: String!
+  hobbies: [Hobby!]!
+  id: Int!
+  name: String
+  registeredAt: DateTime!
+  updatedAt: DateTime!
+}
